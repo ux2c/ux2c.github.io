@@ -1,0 +1,53 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.workflow {
+    display: none;
+}
+
+#stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    background: white;
+}
+
+.terminator {
+    fill: lightblue;
+}
+
+.process {
+    fill: lightgreen;
+}
+
+.decision {
+    fill: orange;
+}
+
+.caption {
+    text-anchor: middle;
+    alignment-baseline: central;
+    fill: white;
+}
+
+.label {
+    text-anchor: middle;
+    alignment-baseline: central;
+    fill: gray;
+}
+
+.connector {
+    fill: none;
+    stroke: gray;
+    stroke-width: 2px;
+}
+
+.arrow {
+    fill: gray;
+}

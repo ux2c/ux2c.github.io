@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Fjalla+One|Libre+Franklin|Roboto+Condensed" rel="stylesheet">
+    <style>
+        html,
+        body {
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #141414;
+            font-family: 'Libre Franklin', sans-serif;
+            letter-spacing: -.03em;
+        }
+
+        .show3 {
+            width: 70vw;
+            height: 80vh;
+            position: relative;
+            perspective: 4vw;
+            overflow: hidden;
+        }
+
+        .personae {
+            background: grey;
+        }
+
+        .icon {
+            position: absolute;
+            width: 16%;
+            padding-top: 20%;
+            left: 10%;
+            top: 10%;
+            border-radius: 50%;
+            box-shadow: .5em .5em 1em black;
+            transition: .5s all;
+        }
+
+        .content {
+            position: absolute;
+            width: 40%;
+            height: 60%;
+            right: 10%;
+            top: 20%;
+            background: white;
+            transition: .3s all;
+        }
+
+        #blue {
+            background-image: url(img/ben.jpg);
+            background-size: cover;
+        }
+
+        #red {
+            background-image: url(img/tyler.jpg);
+            background-size: cover;
+        }
+
+        #green {
+            background-image: url(img/amber.jpg);
+            background-size: cover;
+        }
+
+        .first .icon {
+            transform: translate3d(5vw, 5vw, 0);
+            z-index: 10;
+        }
+
+        .second .icon {
+            transform: translate3d(-24vw, -6vw, -4vw);
+            z-index: 1;
+        }
+
+        .third .icon {
+            transform: translate3d(-12vw, 8vw, -2vw);
+            z-index: 5;
+        }
+
+        .first .content {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+            z-index: 9;
+            animation: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards slideInFromRight;
+        }
+
+        .second .content {
+            transform: translate3d(-20vw, -2vw, -3vw);
+            opacity: 0;
+            z-index: 0;
+        }
+
+        .third .content {
+            transform: translate3d(20vw, -2vw, -2vw);
+            opacity: 0;
+            z-index: 4;
+        }
+
+        h1 {
+            margin-bottom: .2em;
+        }
+
+        section {
+            margin: 1em 2em;
+
+        }
+        h2 {
+            margin-top: 0;
+            padding: 1em 1.5em;
+            background: black;
+            font-family: 'Fjalla One', sans-serif;
+            text-transform: uppercase;
+            color: #f51f1f;
+        }
+
+        h4 {
+            margin-top: 0;
+            margin-bottom: .2em;
+        }
+
+        h5 {
+            margin-top: .3em;
+            margin-bottom: .3em;
+        }
+
+        p {
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        a {
+            color: grey;
+        }
+
+        @keyframes slideInFromRight {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+    <script>
+        'use strict';
+
+        var clkr = {};
+
+        !function (a, b, c, d) {
+            function advance(g, h, i, j, k) {
+                g = [];
+                h = this.show.sequence.length;
+                for (i = 0; i < h; i += 1) {
+                    g[i] = this.show.stage.querySelectorAll('.' + this.show.sequence[i]);
+                }
+                for (i = 0; i < h; i += 1) {
+                    k = g[i].length;
+                    for (j = 0; j < k; j += 1) {
+                        g[i][j].classList.remove(this.show.sequence[i]);
+                        g[i][j].classList.add(this.show.sequence[(i + h - 1) % h]);
+                    }
+                }
+            }
+
+            function ready(e) {
+                d = e.target;
+                a.forEach(function (r, s, t, u, v, w) {
+                    s = d.getElementsByClassName(r.show);
+                    v = s.length;
+                    for (u = 0; u < v; u += 1) {
+                        w = s[u].querySelector('.' + r.next) || s[u];
+                        if (w) {
+                            w.show = { stage: s[u], sequence: r.sequence };
+                            w.addEventListener('click', advance);
+                        }
+                    }
+                });
+            }
+
+            this.enbl = function enbl(d) {
+                a = a || [];
+                a.push(d);
+            }
+
+            window.addEventListener('load', ready);
+        }.apply(clkr);
+
+        clkr.enbl({ show: 'show3', next: 'button', sequence: ['first', 'second', 'third'] });
+    </script>
+</head>
+
+<body>
+    <div class="show3 personae button">
+        <div class="first slide">
+            <div id="red" class="icon">
+            </div>
+            <div class="content">
+                <h2>Tyler</h2>
+                <section>
+                    <h4>Client, 1 Year Member</h4>
+                    <h5>Lives in the Midwest</h5>
+                    <p>
+                        <strong>Hobbies:</strong> Baseball, running, trying a new brewery with his buddies</p>
+                    <p>
+                        <strong>Apps on his phone:</strong> LinkedIn, Twitter, Instagram, Lyft and Spotify
+                    </p>
+                    <p>
+                        <a href="tyler">Read more...</a>
+                    </p>
+                </section>
+            </div>
+        </div>
+        <div class="second slide">
+            <div id="blue" class="icon">
+            </div>
+            <div class="content">
+                    <h2>Ben</h2>
+                <section>
+                    <h4>Client, New Member</h4>
+                    <h5>Lives in the Midwest</h5>
+                    <p>
+                        <strong>Hobbies:</strong> Hiking, science, hanging out with friends and writing poetry</p>
+                    <p>
+                        <strong>Apps on his phone:</strong> Instagram, Uber and Spotify
+                    </p>
+                    <p>
+                        <a href="ben">Read more...</a>
+                    </p>
+                </section>
+            </div>
+        </div>
+        <div class="third slide">
+            <div id="green" class="icon">
+            </div>
+            <div class="content">
+                    <h2>Amber</h2>
+                <section>
+                    <h4>Stylist, 2 Year Member</h4>
+                    <h5>Lives in the Midwest</h5>
+                    <p>
+                        <strong>Hobbies:</strong> Traveling, yoga, watching movies and reading</p>
+                    <p>
+                        <strong>Apps on her phone:</strong> LinkedIn, Twitter, Instagram, Snapchat and Netflix
+                    </p>
+                    <p>
+                        <p>
+                            <a href="amber">Read more...</a>
+                        </p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

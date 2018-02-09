@@ -1,0 +1,37 @@
+{
+    "Locate/Identify Stylist": {
+        "Vagaro": "5",
+        "Styleseat": "7",
+        "Booksy": "0",
+        "lastminute": "4",
+        "SQUIRE": "7"
+    },
+    "Qualify (4-5*, $$, Eden Prairie": {
+        "Vagaro": "7",
+        "Styleseat": "7",
+        "Booksy": "7",
+        "lastminute": "4",
+        "SQUIRE": "3"
+    },
+    "Other Services Offered": {
+        "Vagaro": "6",
+        "Styleseat": "6",
+        "Booksy": "8",
+        "lastminute": "6",
+        "SQUIRE": "8"
+    },
+    "Register as New Customer": {
+        "Vagaro": "7",
+        "Styleseat": "3",
+        "Booksy": "5",
+        "lastminute": "5",
+        "SQUIRE": "7"
+    },
+    "Rate and Tip": {
+        "Vagaro": "0",
+        "Styleseat": "0",
+        "Booksy": "0",
+        "lastminute": "0",
+        "SQUIRE": "3"
+    }
+}
