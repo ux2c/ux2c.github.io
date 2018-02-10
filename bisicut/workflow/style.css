@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+
 html,
 body {
     margin: 0;
     height: 100%;
+    background: black;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    color: white;
 }
 
 .workflow {
@@ -11,23 +20,23 @@ body {
 #stage {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 200%;
     color: white;
     font-family: Arial;
     text-align: center;
-    background: white;
+    background: black;
 }
 
 .terminator {
-    fill: lightblue;
+    fill: grey;
 }
 
 .process {
-    fill: lightgreen;
+    fill: grey;
 }
 
 .decision {
-    fill: orange;
+    fill: red;
 }
 
 .caption {
@@ -39,15 +48,15 @@ body {
 .label {
     text-anchor: middle;
     alignment-baseline: central;
-    fill: gray;
+    fill: lightgray;
 }
 
 .connector {
     fill: none;
-    stroke: gray;
+    stroke: lightgray;
     stroke-width: 2px;
 }
 
 .arrow {
-    fill: gray;
+    fill: lightgray;
 }
