@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Stylist Overview</title>
+    <title>New Client - Specific Stylist</title>
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Open+Sans:400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <script src="../flow.js"></script>
@@ -17,21 +17,17 @@
         <div id="background" class="portrait"></div>
         <header>
             <div class="name">
-                <h1>Stylist Overview</h1>
+                <h1>Schedule Appointment</h1>
             </div>
         </header>
         <article>
             <div class="workflow">
-                <div class="terminator">Login Bisicut</div>
-                <div class="decision" yes="service">Status correct?</div>
-                <div class="process">Change Status</div>
-                <div class="decision" no="refer" id="service">Completed Service?</div>
-                <div class="process">Rate Customer</div>
-                <div class="decision" no="work" id="refer">Refer Participant?</div>
-                <div class="process">Generate Invite</div>
-                <div class="terminator" id="work">Back to work!</div>
-
-                <div class="process">Check services able to provide</div>
+                <div class="terminator">Launch Bisicut</div>
+                <div class="process" id="find">Find Stylist</div>
+                <div class="process">Select Services</div>
+                <div class="process">Review Availability</div>
+                <div class="decision" no="find">Compatible?</div>
+                <div class="terminator">Confirm Appointment</div>
             </div>
         </article>
     </main>
