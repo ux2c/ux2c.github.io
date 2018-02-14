@@ -63,7 +63,7 @@
                         return distance(a) - distance(b);
                     });
                     //need to defer secondary connections until after all primary connections are made, and process secondary from shortest to longest path
-                    console.log(local, remote, paths);
+                    //console.log(local, remote, paths);
                     connectors = paths[0];
                     centers = distance([
                         [local.x, local.y],
@@ -174,14 +174,19 @@
                         }, caption);
                     };
                     shape.textAdjust = function () {
+                        console.log(stage.style.fontSize);
+
                         if (shape.text) {
                             var textW = shape.text.getBBox().width,
                                 shapeW = shape.getBBox().width;
+
                             if (textW * 2 > shapeW) {
-                                stage.style.fontSize = parseInt(parseInt(stage.style.fontSize) * shapeW / textW / 2) + 'px';
+                                stage.style.fontSize = parseInt(parseInt(stage.style.fontSize) * shapeW / textW / 3) + 'px';
                             };
                         };
                     };
+                    //console.log(stage.style.fontSize);
+
                     return shape;
                 };
 
